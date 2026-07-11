@@ -145,6 +145,18 @@
     clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);
   }
   .btn-ghost:hover{border-color:var(--lime-400); color:var(--lime-300);}
+  .btn-green{
+    display:inline-flex; align-items:center; gap:9px;
+    font-family:'Chakra Petch',sans-serif; font-weight:600; font-size:14.5px; letter-spacing:.02em;
+    padding:12px 22px 12px 18px; color:#fff;
+    background:linear-gradient(100deg,#B8290A 0%, #F0501C 55%, #FF8A3D 130%);
+    clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);
+    transition:transform .2s ease, box-shadow .2s ease;
+    box-shadow:0 6px 18px -6px rgba(176,41,10,0.5);
+    border:none; cursor:pointer;
+  }
+  .btn-green:hover{transform:translateY(-2px); box-shadow:0 10px 22px -6px rgba(176,41,10,0.6);}
+  .btn-icon{flex:0 0 auto; display:inline-flex;}
   .hero-stats{
     display:flex; gap:34px; margin-top:56px; flex-wrap:wrap;
   }
@@ -215,6 +227,8 @@
   .katalog .kicker::before{background:var(--lime-500);}
   .katalog h2.h-title{color:#fff;}
   .katalog p.h-sub{color:var(--slate-300);}
+  #freefire .kicker{color:#FF8A3D;}
+  #freefire .kicker::before{background:#FF8A3D;}
   .cat-grid{
     display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:52px;
   }
@@ -240,6 +254,12 @@
   .game-card h3{font-family:'Chakra Petch',sans-serif; font-size:16px; font-weight:600;}
   .game-card .from{font-size:12px; color:var(--slate-300); letter-spacing:.02em;}
   .game-card .price{font-family:'JetBrains Mono',monospace; font-size:16.5px; color:var(--lime-400); font-weight:600;}
+
+  /* Kartu produk Free Fire - warna oranye-merah senada tombol Top Up Free Fire */
+  #freefire .game-card:hover{border-color:#FF8A3D; background:rgba(240,80,28,.10); transform:translateY(-4px);}
+  #freefire .game-badge{background:linear-gradient(135deg,#B8290A,#FF8A3D); color:#fff;}
+  #freefire .game-card .price{color:#FF8A3D;}
+  #freefire .cat-more a{color:#FF8A3D; border-bottom:1px solid rgba(255,138,61,.4);}
   .cat-more{
     margin-top:40px; text-align:center; color:var(--slate-300); font-size:14.5px;
   }
@@ -332,14 +352,16 @@
 </head>
 <body>
 
-<div style="background:var(--forest-950); color:#fff; text-align:center; padding:10px 12px; font-family:'Chakra Petch',sans-serif; font-weight:700; letter-spacing:.16em; font-size:15px;">
-  NEXA STORE
+<div style="background:#fff; color:var(--forest-950); text-align:center; padding:8px 12px; font-family:'Chakra Petch',sans-serif; font-weight:700; letter-spacing:.16em; font-size:15px; display:flex; align-items:center; justify-content:center; gap:10px; border-bottom:1px solid var(--line);">
+  <img src="logo.jpg" alt="Nexa Store" style="height:28px; width:auto;">
+  <span>NEXA STORE</span>
 </div>
 <header>
   <nav class="nav">
     <a href="#" class="brand"><img src="logo.jpg" alt="Nexa Store"></a>
     <ul class="navlinks">
-      <li><a href="#katalog">Katalog</a></li>
+      <li><a href="#katalog">Robux</a></li>
+      <li><a href="#freefire">Free Fire</a></li>
       <li><a href="#kenapa">Kenapa Kami</a></li>
       <li><a href="#kontak">Kontak</a></li>
     </ul>
@@ -355,11 +377,18 @@
   <div class="hero-slash"></div>
   <div class="wrap hero-inner">
     <div>
-      <span class="eyebrow"><span class="dot"></span>Top Up Robux Roblox</span>
-      <h1 class="hero-title">Top up Robux,<br><span class="cut">secepat kilat.</span></h1>
-      <p class="sub">Nexa Store melayani top up Robux Roblox dengan proses cepat, aman, dan harga bersahabat.</p>
+      <span class="eyebrow"><span class="dot"></span>Top Up Robux dan Diamond FF</span>
+      <h1 class="hero-title">Top up Robux dan Diamond FF,<br><span class="cut">secepat kilat.</span></h1>
+      <p class="sub">Nexa Store melayani top up Robux Roblox dan Free Fire dengan proses cepat, aman, dan harga bersahabat.</p>
       <div class="hero-actions">
-        <a href="#katalog" class="btn">Top Up Robux</a>
+        <a href="#katalog" class="btn">
+          <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2 L21 7 L21 17 L12 22 L3 17 L3 7 Z" fill="#fff" opacity=".92"/><path d="M12 2 L21 7 L12 12 L3 7 Z" fill="#D8FFC2"/></svg>
+          Top Up Robux
+        </a>
+        <a href="#freefire" class="btn-green">
+          <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2 L21 7 L21 17 L12 22 L3 17 L3 7 Z" fill="#fff" opacity=".92"/><path d="M12 2 L21 7 L12 12 L3 7 Z" fill="#FFE1C2"/></svg>
+          Top Up Free Fire
+        </a>
       </div>
       <div class="hero-stats">
         <div class="stat"><b>&lt;60s</b><span>Rata-rata proses</span></div>
@@ -420,6 +449,28 @@
       <a class="game-card" href="https://wa.me/628886567888?text=Halo%20Admin%20Nexa%20Store%2C%20saya%20mau%20top%20up%201500%20Robux%20seharga%20Rp%20220.000.%20Mohon%20info%20pembayarannya%20ya." target="_blank" rel="noopener"><div class="game-badge">1.5K</div><h3>1500 Robux</h3><span class="from">Harga</span><span class="price">Rp 220.000</span></a>
     </div>
     <p class="cat-more">Butuh nominal khusus atau untuk gamepass? <a href="#kontak">Hubungi tim kami</a></p>
+  </div>
+</section>
+
+<section class="katalog" id="freefire" style="background:var(--forest-800);">
+  <div class="wrap">
+    <span class="kicker">Katalog Produk</span>
+    <h2 class="h-title">Top Up Free Fire, pilih nominal Diamond kamu.</h2>
+    <p class="h-sub">Semua nominal Diamond tersedia lengkap dengan bonus, diproses otomatis ke ID Free Fire kamu.</p>
+
+    <div class="cat-grid">
+      <a class="game-card" href="https://wa.me/628886567888?text=Halo%20Admin%20Nexa%20Store%2C%20saya%20mau%20top%20up%20100%20Diamond%20%28bonus%20110%29%20Free%20Fire%20seharga%20Rp%2027.000.%20Mohon%20info%20pembayarannya%20ya." target="_blank" rel="noopener"><div class="game-badge">100</div><h3>100 Diamond <span style="opacity:.7;font-size:12px;">(+110)</span></h3><span class="from">Harga</span><span class="price">Rp 27.000</span></a>
+      <a class="game-card" href="https://wa.me/628886567888?text=Halo%20Admin%20Nexa%20Store%2C%20saya%20mau%20top%20up%20200%20Diamond%20%28bonus%2053%29%20Free%20Fire%20seharga%20Rp%2035.000.%20Mohon%20info%20pembayarannya%20ya." target="_blank" rel="noopener"><div class="game-badge">200</div><h3>200 Diamond <span style="opacity:.7;font-size:12px;">(+53)</span></h3><span class="from">Harga</span><span class="price">Rp 35.000</span></a>
+      <a class="game-card" href="https://wa.me/628886567888?text=Halo%20Admin%20Nexa%20Store%2C%20saya%20mau%20top%20up%20300%20Diamond%20%28bonus%2050%29%20Free%20Fire%20seharga%20Rp%2045.000.%20Mohon%20info%20pembayarannya%20ya." target="_blank" rel="noopener"><div class="game-badge">300</div><h3>300 Diamond <span style="opacity:.7;font-size:12px;">(+50)</span></h3><span class="from">Harga</span><span class="price">Rp 45.000</span></a>
+      <a class="game-card" href="https://wa.me/628886567888?text=Halo%20Admin%20Nexa%20Store%2C%20saya%20mau%20top%20up%20400%20Diamond%20%28bonus%2020%29%20Free%20Fire%20seharga%20Rp%2054.000.%20Mohon%20info%20pembayarannya%20ya." target="_blank" rel="noopener"><div class="game-badge">400</div><h3>400 Diamond <span style="opacity:.7;font-size:12px;">(+20)</span></h3><span class="from">Harga</span><span class="price">Rp 54.000</span></a>
+      <a class="game-card" href="https://wa.me/628886567888?text=Halo%20Admin%20Nexa%20Store%2C%20saya%20mau%20top%20up%20500%20Diamond%20%28bonus%2060%29%20Free%20Fire%20seharga%20Rp%2072.000.%20Mohon%20info%20pembayarannya%20ya." target="_blank" rel="noopener"><div class="game-badge">500</div><h3>500 Diamond <span style="opacity:.7;font-size:12px;">(+60)</span></h3><span class="from">Harga</span><span class="price">Rp 72.000</span></a>
+      <a class="game-card" href="https://wa.me/628886567888?text=Halo%20Admin%20Nexa%20Store%2C%20saya%20mau%20top%20up%20600%20Diamond%20%28bonus%2030%29%20Free%20Fire%20seharga%20Rp%2080.000.%20Mohon%20info%20pembayarannya%20ya." target="_blank" rel="noopener"><div class="game-badge">600</div><h3>600 Diamond <span style="opacity:.7;font-size:12px;">(+30)</span></h3><span class="from">Harga</span><span class="price">Rp 80.000</span></a>
+      <a class="game-card" href="https://wa.me/628886567888?text=Halo%20Admin%20Nexa%20Store%2C%20saya%20mau%20top%20up%20700%20Diamond%20Free%20Fire%20seharga%20Rp%2088.000.%20Mohon%20info%20pembayarannya%20ya." target="_blank" rel="noopener"><div class="game-badge">700</div><h3>700 Diamond</h3><span class="from">Harga</span><span class="price">Rp 88.000</span></a>
+      <a class="game-card" href="https://wa.me/628886567888?text=Halo%20Admin%20Nexa%20Store%2C%20saya%20mau%20top%20up%20800%20Diamond%20%28bonus%2040%29%20Free%20Fire%20seharga%20Rp%2095.000.%20Mohon%20info%20pembayarannya%20ya." target="_blank" rel="noopener"><div class="game-badge">800</div><h3>800 Diamond <span style="opacity:.7;font-size:12px;">(+40)</span></h3><span class="from">Harga</span><span class="price">Rp 95.000</span></a>
+      <a class="game-card" href="https://wa.me/628886567888?text=Halo%20Admin%20Nexa%20Store%2C%20saya%20mau%20top%20up%20900%20Diamond%20%28bonus%2010%29%20Free%20Fire%20seharga%20Rp%20115.000.%20Mohon%20info%20pembayarannya%20ya." target="_blank" rel="noopener"><div class="game-badge">900</div><h3>900 Diamond <span style="opacity:.7;font-size:12px;">(+10)</span></h3><span class="from">Harga</span><span class="price">Rp 115.000</span></a>
+      <a class="game-card" href="https://wa.me/628886567888?text=Halo%20Admin%20Nexa%20Store%2C%20saya%20mau%20top%20up%201000%20Diamond%20%28bonus%2050%29%20Free%20Fire%20seharga%20Rp%20135.000.%20Mohon%20info%20pembayarannya%20ya." target="_blank" rel="noopener"><div class="game-badge">1K</div><h3>1000 Diamond <span style="opacity:.7;font-size:12px;">(+50)</span></h3><span class="from">Harga</span><span class="price">Rp 135.000</span></a>
+    </div>
+    <p class="cat-more">Butuh nominal khusus? <a href="#kontak">Hubungi tim kami</a></p>
   </div>
 </section>
 <section class="why" id="kenapa">
